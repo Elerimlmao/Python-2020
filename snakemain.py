@@ -1,8 +1,7 @@
 import math
 import random
 import pygame
-import tkinter as tk
-from tkinter import messagebox
+from tkinter import *
 
 
 class cube(object):
@@ -162,7 +161,7 @@ def randomSnack(rows, item):
 
 
 def message_box(subject, content):
-    root = tk.Tk()
+    root = Tk()
     root.attributes("-topmost", True)
     root.withdraw()
     messagebox.showinfo(subject, content)
@@ -193,8 +192,8 @@ def main():
 
         for x in range(len(s.body)):
             if s.body[x].pos in list(map(lambda z: z.pos, s.body[x + 1:])):
-                print('Score: ', len(s.body))
-                message_box('You Lost!', 'Play again...')
+                print('Točke: ', len(s.body))
+                message_box('Ti luzer,', 'Poskusi še enkrat...')
                 s.reset((10, 10))
                 break
 
@@ -202,3 +201,4 @@ def main():
 
 
 main()
+    
