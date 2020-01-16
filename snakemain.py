@@ -1,8 +1,8 @@
 import math
 import random
 import pygame
-from tkinter import *
-
+import tkinter as tk
+from tkinter import messagebox
 
 class cube(object):
     rows = 20
@@ -161,7 +161,7 @@ def randomSnack(rows, item):
 
 
 def message_box(subject, content):
-    root = Tk()
+    root = tk.Tk()
     root.attributes("-topmost", True)
     root.withdraw()
     messagebox.showinfo(subject, content)
@@ -184,7 +184,7 @@ def main():
 
     while flag:
         pygame.time.delay(50)
-        clock.tick(10)
+        clock.tick(60)
         s.move()
         if s.body[0].pos == snack.pos:
             s.addCube()
